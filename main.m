@@ -74,7 +74,8 @@ X2 = f2(A, b,lb);
 
 % Q3. Responsable des stocks : minimiser le nombre de produits dans le
 % stock
-% X3 = f3( A, b, lb, ProdMax, Ratio);
+ProdMax = ones(1, 6) * X2;
+X3 = f3(A, b, lb, ProdMax, Ratio);
 
 % Q4. Responsable commercial : minimiser l'écart de production
 % entre les familles de produit (arbitrairement, écart limité à 3).
