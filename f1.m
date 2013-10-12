@@ -1,5 +1,6 @@
-function [ y ] = f1(pv,c,t,q,pa)
-%Calcul du bénéfice total
-y = (pv-pa*q-c*(t/60).');
+function [ X ] = f1(vectBenef,A,b,lb)
+
+	X = linprog(-vectBenef,A,b,[],[],lb,[]);
+
 end
 
