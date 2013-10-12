@@ -61,6 +61,9 @@ lb = zeros(6,1);
 % vectBenef : vecteur des coefficients de la fonction du bénéfice
 vectBenef = (pv-pa*q-c*(t/60).');
 
+% vectStockTotal : donne le stock total occupé par la production (matières premières + produits eux mêmes)
+vectStockTotal = [5 4 6 8 9 4];
+
 % Q1. Comptable : maximiser le bénéfice, en tenant compte des couts de
 % fonctionnement des couts de fonctionnement des machines et du cout
 % d'achat des matières premières
