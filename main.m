@@ -1,5 +1,7 @@
 %AIDE A LA DECISION: programmation linéaire
 %Choix du plan de production de l'entreprise ADécision
+close all;
+clear;
 
 % définition des paramètres du problème à modéliser
 
@@ -40,6 +42,9 @@ pa = [3 4 2];
 % Ligne : couts
 c = [2 2 1 1 2 3 1];
 
+% vectStockTotal : donne le stock total occupé par la production (matières premières + produits eux mêmes)
+vectStockTotal = [5 4 6 8 9 4];
+
 % Définition des matrices et vecteurs de contraintes A, b et lb
 
 % A : matrice de contraintes
@@ -71,7 +76,8 @@ X2 = f2(A, b,lb);
 
 % Q3. Responsable des stocks : minimiser le nombre de produits dans le
 % stock
-% X3 = f3( A, b, lb, ProdMax, Ratio);
+Ratio = 0.8;
+X3 = f3(A, b, lb, X2,vectStockTotal);
 
 % Q4. Responsable commercial : minimiser l'écart de production
 % entre les familles de produit (arbitrairement, écart limité à 3).
@@ -79,4 +85,4 @@ X4 = f4(A,b,lb,vectBenef);
 
 % Q5. Calcul du nombre de produits finis en minimisant l'utilisation des
 % machines 1 et 5
-X5 = f5(t,A,b,lb,vectBenef,10000);
+X5 = f5(t,A,b,lb,vectBenef);
