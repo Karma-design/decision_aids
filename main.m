@@ -66,6 +66,9 @@ lb = zeros(6,1);
 % vectBenef : vecteur des coefficients de la fonction du bénéfice
 vectBenef = (pv-pa*q-c*(t/60).');
 
+% vectStockTotal : donne le stock total occupé par la production (matières premières + produits eux mêmes)
+vectStockTotal = [5 4 6 8 9 4];
+
 % Q1. Comptable : maximiser le bénéfice, en tenant compte des couts de
 % fonctionnement des couts de fonctionnement des machines et du cout
 % d'achat des matières premières
@@ -76,8 +79,14 @@ X2 = f2(A, b,lb);
 
 % Q3. Responsable des stocks : minimiser le nombre de produits dans le
 % stock
+<<<<<<< HEAD
 Ratio = 0.8;
 X3 = f3(A, b, lb, X2,vectStockTotal);
+=======
+ProdMax = ones(1, 6) * X2;
+Ratio = 0.8;
+X3 = f3(A, b, lb, ProdMax, Ratio);
+>>>>>>> 256353cb81348a2620906264cec761c37d5e92f7
 
 % Q4. Responsable commercial : minimiser l'écart de production
 % entre les familles de produit (arbitrairement, écart limité à 3).
