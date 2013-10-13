@@ -4,5 +4,5 @@ function [ R ] = f2(A, b,lb)
     matSomme = ones(6, 1);
     [R,stock] = linprog(-1 * matSomme, A, b, [], [],lb, []);
 
-    figure('Name','Responsable Atelier','NumberTitle','off');plot(R);
+   % figure('Name','Responsable Atelier','NumberTitle','off');plot(stock);
 end

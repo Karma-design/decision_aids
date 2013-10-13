@@ -11,16 +11,14 @@ function [ R ] = f3( A, b, lb, X,stockTotal)
     stock = zeros(1,iterations);
       
     figure('Name','Responsable Stocks','NumberTitle','off');
-    xlabel('X');
-    ylabel('unités');
+    xlabel('Production Maximale');
+    ylabel('Produits en stock');
     hold on;
-    set(gca,'XTick',[1 2 3 4 5 6]);
     
     for i = 1:iterations
         [R(:,i),stock(1,i)] = linprog(stockTotal, A, b, Aeq, Ratio(1,i)*ProdMax,lb, []);      
     end
     
-    plot(R);
+    plot(Ratio,stock);
     hold off;
 end
-

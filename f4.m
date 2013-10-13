@@ -6,5 +6,5 @@ function [ X ] = f4(A,b,lb,vectBenef)
 
     [X,benef] = linprog(-vectBenef,tempA,tempb,[],[],lb,[]);
 
-    figure('Name','Responsable Commercial','NumberTitle','off');plot(X);
+    %figure('Name','Responsable Commercial','NumberTitle','off');plot(benef);
 end
