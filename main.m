@@ -69,10 +69,10 @@ vectBenef = (pv-pa*q-c*(t/60).');
 % Q1. Comptable : maximiser le bénéfice, en tenant compte des couts de
 % fonctionnement des couts de fonctionnement des machines et du cout
 % d'achat des matières premières
-X1 = f1(vectBenef,A,b,lb);
+[X1,beneficeMax] = f1(vectBenef,A,b,lb);
 
 % Q2. Responsable d'atelier : maximiser le nombre de produits créés
-X2 = f2(A, b,lb);
+[X2,productionMax] = f2(A, b,lb);
 
 % Q3. Responsable des stocks : minimiser le nombre de produits dans le
 % stock

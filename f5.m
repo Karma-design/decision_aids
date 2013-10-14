@@ -11,14 +11,15 @@ function [ X ] = f5(t,A,b,lb,vectBene)
     
     
     figure('Name','Responsable Personnel','NumberTitle','off');
-    xlabel('Bénéfice');
-    ylabel('Produits créés');
+    xlabel('Bénéfice par semaine');
+    ylabel('Temps d''utilisation des machines 1 et 5 (en mn) par semaine');
     hold on;
     
     for i = 1:iterations
         [X(:,i),temps(1,i)] = linprog(f,A,b,vectBene,coeffBene(1,i),lb,[]);      
     end
     
-    plot(coeffBene,temps);
+    plot(temps,coeffBene);
+    temps
     hold off;
 end
