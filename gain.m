@@ -1,4 +1,5 @@
 function [g1, g2, g3, g4, g5] = gains(X, vectBenef, vectStockTotal, t)
+    % Attention, fonction non testée!
     vectSomme = ones(6, 1);
     vectEcartFamilles = [1; 1; 1; -1; -1; -1];
     vectMachines = t * [1; 0; 0; 0; 1; 0; 0];
